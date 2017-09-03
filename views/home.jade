@@ -1,36 +1,158 @@
 extends layout
 
 block content
-  .container-fluid
-    if messages.error
-      .alert.alert-danger(role='alert')
-        for error in messages.error
-          div= error.msg
-    if messages.success
-      .alert.alert-success(role='alert')
-        for success in messages.success
-          div= success.msg
-    if messages.info
-      .alert.alert-info(role='alert')
-        for info in messages.info
-          div= info.msg
-
-    .row
-      .col-sm-4
-        .panel
-          .panel-body
-            h3 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            a.btn.btn-default(href='#', role='button') View details
-      .col-sm-4
-        .panel
-          .panel-body
-            h3 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            a.btn.btn-default(href='#', role='button') View details
-      .col-sm-4
-        .panel
-          .panel-body
-            h3 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            a.btn.btn-default(href='#', role='button') View details
+  main.site-content(role='main')
+    section#home-slider
+      #slider.sl-slider-wrapper
+        .sl-slider
+          .sl-slide(data-orientation='horizontal', data-slice1-rotation='-25', data-slice2-rotation='-25', data-slice1-scale='2', data-slice2-scale='2')
+            .bg-img.bg-img-1
+            .slide-caption
+              .caption-content
+                h2.animated.fadeInDown A Demo Web App
+                span.animated.fadeInDown By Cahal Kearney
+          .sl-slide(data-orientation='vertical', data-slice1-rotation='10', data-slice2-rotation='-15', data-slice1-scale='1.5', data-slice2-scale='1.5')
+            .bg-img.bg-img-2
+            .slide-caption
+              .caption-content
+                h2 A NodeJS app with Jade, CSS hosted on Heroku
+                span Created with Boilerplate and template code
+          .sl-slide(data-orientation='horizontal', data-slice1-rotation='3', data-slice2-rotation='3', data-slice1-scale='2', data-slice2-scale='1')
+            .bg-img.bg-img-3
+            .slide-caption
+              .caption-content
+                h2 All using JavaScript
+                span I will display a simple API call 
+                a.btn.btn-blue.btn-effect(href='#about') Continue
+        // /sl-slider
+        nav#nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev(href='javascript:;')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='javascript:;')
+            i.fa.fa-angle-right.fa-3x
+        nav#nav-dots.nav-dots.visible-xs.visible-sm.hidden-md.hidden-lg
+          span.nav-dot-current
+          span
+          span
+    section#about
+      .container
+        .row
+          .col-md-4.wow.animated.fadeInLeft
+            .recent-works
+              h3 Recent Works
+              #works
+                .work-item
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    br
+                    br
+                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                .work-item
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    br
+                    br
+                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                .work-item
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    br
+                    br
+                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+          .col-md-7.col-md-offset-1.wow.animated.fadeInRight
+            .welcome-block
+              h3 Welcome To Our Site
+              .message-body
+                img.pull-left(src='/img/author.jpg', alt='Cahal')
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              a.btn.btn-border.btn-effect.pull-right(href='#') Read More
+    // end about section
+    // Service section
+    section#service
+      .container
+        .row
+          .sec-title.text-center
+            h2.wow.animated.bounceInLeft Service
+            p.wow.animated.bounceInRight The Key Features of our Job
+          .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn
+            .service-item
+              .service-icon
+                i.fa.fa-home.fa-3x
+              h3 Support
+              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.3s')
+            .service-item
+              .service-icon
+                i.fa.fa-tasks.fa-3x
+              h3 Well Documented
+              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.6s')
+            .service-item
+              .service-icon
+                i.fa.fa-clock-o.fa-3x
+              h3 Design UI/UX
+              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.9s')
+            .service-item
+              .service-icon
+                i.fa.fa-heart.fa-3x
+              h3 Web Security
+              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+    // end Service section
+    // Social section
+    section#social.parallax
+      .overlay
+        .container
+          .row
+            .sec-title.text-center.white.wow.animated.fadeInDown
+              h2 FOLLOW US
+              p Beautifully simple follow buttons to help you get followers on
+            ul.social-button
+              li.wow.animated.zoomIn
+                a(href='#')
+                  i.fa.fa-thumbs-up.fa-2x
+              li.wow.animated.zoomIn(data-wow-delay='0.3s')
+                a(href='#')
+                  i.fa.fa-twitter.fa-2x
+              li.wow.animated.zoomIn(data-wow-delay='0.6s')
+                a(href='#')
+                  i.fa.fa-dribbble.fa-2x
+    // end Social section
+    // Contact section
+    section#contact
+      .container
+        .row
+          .sec-title.text-center.wow.animated.fadeInDown
+            h2 Contact
+            p Leave a Message
+          .col-md-7.contact-form.wow.animated.fadeInLeft
+            form(action='#', method='post')
+              .input-field
+                input.form-control(type='text', name='name', placeholder='Your Name...')
+              .input-field
+                input.form-control(type='email', name='email', placeholder='Your Email...')
+              .input-field
+                input.form-control(type='text', name='subject', placeholder='Subject...')
+              .input-field
+                textarea.form-control(name='message', placeholder='Messages...')
+              button#submit.btn.btn-blue.btn-effect(type='submit') Send
+          .col-md-5.wow.animated.fadeInRight
+            address.contact-details
+              h3 Contact Us
+              p
+                i.fa.fa-pencil
+                | Phoenix Inc.
+                span PO Box 345678
+                span Little Lonsdale St, Melbourne 
+                span Australia
+              br
+              p
+                i.fa.fa-phone
+                | Phone: (415) 124-5678
+              p
+                i.fa.fa-envelope
+                | website@yourname.com
+    // end Contact section
+    section#google-map
+      #map-canvas.wow.animated.fadeInUp

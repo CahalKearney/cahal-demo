@@ -1,2 +1,31 @@
-footer
-  p © 2016 Company, Inc. All Rights Reserved.
+footer#footer
+  .container
+    .row.text-center
+      .footer-content
+        .wow.animated.fadeInDown
+          p newsletter signup
+
+        form.subscribe-form.wow.animated.fadeInUp(action='#', method='post')
+          .input-field
+            input.subscribe.form-control(type='email', placeholder='Enter Your Email...')
+            button.submit-icon(type='submit')
+              i.fa.fa-paper-plane.fa-lg
+        .footer-social
+          ul
+            li.wow.animated.zoomIn
+              a(href='#')
+                i.fa.fa-thumbs-up.fa-3x
+            li.wow.animated.zoomIn(data-wow-delay='0.3s')
+              a(href='#')
+                i.fa.fa-twitter.fa-3x
+            li.wow.animated.zoomIn(data-wow-delay='0.6s')
+              a(href='#')
+                i.fa.fa-skype.fa-3x
+            li.wow.animated.zoomIn(data-wow-delay='0.9s')
+              a(href='#')
+                i.fa.fa-dribbble.fa-3x
+            li.wow.animated.zoomIn(data-wow-delay='1.2s')
+              a(href='#')
+                i.fa.fa-youtube.fa-3x
+        p
+          | Copyright © 2017 

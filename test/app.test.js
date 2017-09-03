@@ -1,7 +1,7 @@
 var request = require('supertest');
 var server = require('../server');
 
-describe('GET /', function() {
+describe('Home Page ', function() {
   it('should render ok', function(done) {
     request(server)
       .get('/')
