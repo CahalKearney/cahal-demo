@@ -586,6 +586,24 @@ h1.navbar-brand {
     color: #009ee3;
 }
 
+.service-item:hover .service-icon-red {
+    border: 3px solid #C0171A;
+    margin-bottom: 20px;
+    color: #C0171A;
+}
+
+.service-item:hover .service-icon-green {
+    border: 3px solid #17C052;
+    margin-bottom: 20px;
+    color: #17C052;
+}
+
+.service-item:hover .service-icon-purple {
+    border: 3px solid #BC4ADB;
+    margin-bottom: 20px;
+    color: #BC4ADB;
+}
+
 .service-icon i {
     -webkit-transform: rotate(-48deg);
        -moz-transform: rotate(-48deg);
