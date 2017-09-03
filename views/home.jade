@@ -73,8 +73,9 @@ block content
       .container
         .row
           .sec-title.text-center
-            h2.wow.animated.bounceInLeft Service
-            p.wow.animated.bounceInRight The Key Features of our Job
+            h2.wow.animated.bounceInLeft News Service
+            p.wow.animated.bounceInRight Using the Guardian News API
+            p.wow.animated.bounceInRight Topic to search under
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn
             .service-item
               .service-icon
@@ -84,7 +85,7 @@ block content
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.3s')
             .service-item
               .service-icon.service-icon-red
-                i.fa.fa-tasks.fa-3x
+                i.fa.fa-newspaper-o.fa-3x
               h3 Well Documented
               p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.6s')
@@ -99,6 +100,12 @@ block content
                 i.fa.fa-bug.fa-3x
               h3 Web Security
               p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        br
+        .row
+          form(action='/news', method='post')
+              .input-field
+                input.form-control(type='text', name='Search', placeholder='Search News')
+              button#submit.btn.btn-blue.btn-effect(type='submit') Search     
     // end Service section
     // Social section
     section#social.parallax

@@ -20,10 +20,10 @@ exports.newsGet = function(req, res) {
  * POST /news
  */
 exports.newsPost = function(req, res) {
- 
-
+  console.log('here................');
+  var errors = req.validationErrors();
   if (errors) {
-    req.flash('error', errors);
+    console.log('NewsPost Error: ', errors);
     return res.redirect('/news');
   }
 
