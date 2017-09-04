@@ -1,11 +1,7 @@
-var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport({
-  service: 'Mailgun',
-  auth: {
-    user: process.env.MAILGUN_USERNAME,
-    pass: process.env.MAILGUN_PASSWORD
-  }
-});
+const guardian = require('guardian-js');
+
+let api = new guardian(process.env.APIKEY, false);
+
 
 /**
  * GET /contact
