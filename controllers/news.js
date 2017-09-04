@@ -21,7 +21,11 @@ exports.newsPost = function(req, res) {
   var searchText = JSON.stringify(req.body.Search);
   api.content.search(searchText) //make the call 
   .then(function(response){
-    console.log(response.body); //do something with the response 
+    // res.json(response);
+    res.render('news', {
+      title: 'Guardian News API Response',
+      news: response.body
+     });
   })
   .catch(function(err){
     console.log(err);
@@ -31,5 +35,6 @@ exports.newsPost = function(req, res) {
     console.log('NewsPost Error: ', errors);
     return res.redirect('/news');
   }
+  
 
 };

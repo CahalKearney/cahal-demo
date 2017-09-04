@@ -60,6 +60,13 @@ main > section {
     color: #fff;
 }
 
+.btn-black {
+    background-color: #312F2F;
+    box-shadblackow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
+    padding: 15px 55px;
+    color: #fff;
+}
+
 .btn-border {
     border: 2px solid #fff;
     color: #fff;

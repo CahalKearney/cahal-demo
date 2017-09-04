@@ -1,5 +1,5 @@
-extends layout
 
+extends layout
 block content
   main.site-content(role='main')
     section#about
@@ -7,26 +7,10 @@ block content
         .row
           .col-md-12.wow.animated.fadeInLeft
             .recent-works
-              h3 Recent Works
+              h3 Search Results
               #works
                 .work-item
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    br
-                    br
-                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                .work-item
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    br
-                    br
-                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                .work-item
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    br
-                    br
-                    |  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                  a.btn-black.btn-effect(href='/') Return to Home
           .col-md-7.col-md-offset-1.wow.animated.fadeInRight
-            
+            #{news}
     // end about section
