@@ -1,5 +1,5 @@
 
-const guardian = require('guardian-js');
+var guardian = require('guardian-js');
 var apiKey = 'e537593a-af0b-4069-b239-a0836efe1ae7';
 var api = new guardian(apiKey, false);
 
@@ -16,7 +16,16 @@ exports.newsGet = function(req, res) {
  * POST /news
  */
 exports.newsPost = function(req, res) {
-  console.log('here................');
+
+
+  var searchText = JSON.stringify(req.body.Search);
+  api.content.search(searchText) //make the call 
+  .then(function(response){
+    console.log(response.body); //do something with the response 
+  })
+  .catch(function(err){
+    console.log(err);
+  });
   var errors = req.validationErrors();
   if (errors) {
     console.log('NewsPost Error: ', errors);
