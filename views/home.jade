@@ -79,33 +79,40 @@ block content
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn
             .service-item
               .service-icon
-                i.fa.fa-tasks.fa-3x
-              h3 Support
-              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                i.fa.fa-newspaper-o.fa-3x
+              h3 Edition Lookup
+              p Returns all editions in the AP
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.3s')
             .service-item
               .service-icon.service-icon-red
-                i.fa.fa-newspaper-o.fa-3x
-              h3 Well Documented
-              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                i.fa.fa-search.fa-3x
+              h3 Search Content
+              p Returns all pieces of content in the API 
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.6s')
             .service-item
               .service-icon.service-icon-green
-                i.fa.fa-code-fork.fa-3x
-              h3 Design UI/UX
-              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                i.fa.fa-tasks.fa-3x
+              h3 Search Sections
+              p Returns all sections in the API 
           .col-md-3.col-sm-6.col-xs-12.text-center.wow.animated.zoomIn(data-wow-delay='0.9s')
             .service-item
               .service-icon.service-icon-purple
-                i.fa.fa-bug.fa-3x
-              h3 Web Security
-              p Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                i.fa.fa-tags.fa-3x
+              h3 Search Tags
+              p Returns all tags in the API 
         br
         .row
-          form(action='/news', method='post')
-              .input-field
-                input.form-control(type='text', name='Search', placeholder='Search News')
-              button#submit.btn.btn-blue.btn-effect(type='submit') Search     
+          .col-md-12.contact-form
+            form(action='/news', method='post')
+                .input-field.col-md-7
+                  input.form-control(type='text', name='Search', placeholder='Search News')
+                .input-field.col-md-6
+                  select(name='options')
+                    option(value='edition') Edition Lookup
+                    option(value='content') Search Content
+                    option(value='section') Search Section
+                    option(value='tags') Search Tags
+                button#submit.btn.btn-blue.btn-effect(type='submit') Search     
     // end Service section
     // Social section
     section#social.parallax

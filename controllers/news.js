@@ -18,23 +18,22 @@ exports.newsGet = function(req, res) {
 exports.newsPost = function(req, res) {
 
 
-  var searchText = JSON.stringify(req.body.Search);
-  api.content.search(searchText) //make the call 
-  .then(function(response){
-    // res.json(response);
-    res.render('news', {
-      title: 'Guardian News API Response',
-      news: response.body
-     });
-  })
-  .catch(function(err){
-    console.log(err);
-  });
-  var errors = req.validationErrors();
-  if (errors) {
-    console.log('NewsPost Error: ', errors);
-    return res.redirect('/news');
-  }
-  
+  var searchText = JSON.stringify(req.body.Search);  
+    api.content.search(searchText)
+    .then(function(response){
+      // res.json(response);
+      res.render('news', {
+        title: 'Guardian News API Response',
+        news: response.body
+       });
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+    var errors = req.validationErrors();
+    if (errors) {
+      console.log('NewsPost Error: ', errors);
+      return res.redirect('/news');
+    } 
 
 };
